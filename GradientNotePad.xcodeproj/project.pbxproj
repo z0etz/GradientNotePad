@@ -11,6 +11,10 @@
 		82B725DA2B7CCAE600806178 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B725D92B7CCAE600806178 /* ContentView.swift */; };
 		82B725DC2B7CCAE800806178 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82B725DB2B7CCAE800806178 /* Assets.xcassets */; };
 		82B725DF2B7CCAE800806178 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82B725DE2B7CCAE800806178 /* Preview Assets.xcassets */; };
+		82B725E62B7CCB2200806178 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B725E52B7CCB2200806178 /* Persistence.swift */; };
+		82B725EC2B7CCB9700806178 /* GradientNotePadCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82B725EA2B7CCB9700806178 /* GradientNotePadCoreData.xcdatamodeld */; };
+		82B725EE2B7CCC9300806178 /* EditNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B725ED2B7CCC9300806178 /* EditNoteView.swift */; };
+		82B725F02B7CCCBD00806178 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B725EF2B7CCCBD00806178 /* NoteViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		82B725D92B7CCAE600806178 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		82B725DB2B7CCAE800806178 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82B725DE2B7CCAE800806178 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		82B725E52B7CCB2200806178 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		82B725EB2B7CCB9700806178 /* GradientNotePadCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GradientNotePadCoreData.xcdatamodel; sourceTree = "<group>"; };
+		82B725ED2B7CCC9300806178 /* EditNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteView.swift; sourceTree = "<group>"; };
+		82B725EF2B7CCCBD00806178 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +43,7 @@
 		82B725CB2B7CCAE600806178 = {
 			isa = PBXGroup;
 			children = (
+				82B725EA2B7CCB9700806178 /* GradientNotePadCoreData.xcdatamodeld */,
 				82B725D62B7CCAE600806178 /* GradientNotePad */,
 				82B725D52B7CCAE600806178 /* Products */,
 			);
@@ -55,6 +64,9 @@
 				82B725D92B7CCAE600806178 /* ContentView.swift */,
 				82B725DB2B7CCAE800806178 /* Assets.xcassets */,
 				82B725DD2B7CCAE800806178 /* Preview Content */,
+				82B725E52B7CCB2200806178 /* Persistence.swift */,
+				82B725ED2B7CCC9300806178 /* EditNoteView.swift */,
+				82B725EF2B7CCCBD00806178 /* NoteViewModel.swift */,
 			);
 			path = GradientNotePad;
 			sourceTree = "<group>";
@@ -137,7 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82B725EC2B7CCB9700806178 /* GradientNotePadCoreData.xcdatamodeld in Sources */,
+				82B725E62B7CCB2200806178 /* Persistence.swift in Sources */,
+				82B725F02B7CCCBD00806178 /* NoteViewModel.swift in Sources */,
 				82B725DA2B7CCAE600806178 /* ContentView.swift in Sources */,
+				82B725EE2B7CCC9300806178 /* EditNoteView.swift in Sources */,
 				82B725D82B7CCAE600806178 /* GradientNotePadApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +358,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		82B725EA2B7CCB9700806178 /* GradientNotePadCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				82B725EB2B7CCB9700806178 /* GradientNotePadCoreData.xcdatamodel */,
+			);
+			currentVersion = 82B725EB2B7CCB9700806178 /* GradientNotePadCoreData.xcdatamodel */;
+			path = GradientNotePadCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 82B725CC2B7CCAE600806178 /* Project object */;
 }
