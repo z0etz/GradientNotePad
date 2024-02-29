@@ -5,14 +5,21 @@
 //  Created by Katja Klahr on 2024-02-14.
 //
 
-import Foundation
+import SwiftUI
 import CoreData
 
 class NoteViewModel: ObservableObject {
     
     @Published var notes: [Note] = []
-    
     var container = Persistence.shared.container
+    
+    let gradientColors: [[Color]] = [
+        [Color.white, Color(red: 0.6235, green: 1, blue: 0.6196)], // Style ID 0
+        [Color.white, Color(red: 0.6196, green: 0.9804, blue: 1.0)],   // Style ID 1
+        [Color.white, Color(red: 0.6196, green: 0.7647, blue: 1.0)],   // Style ID 2
+        [Color.white, Color(red: 0.7529, green: 0.6196, blue: 1.0)], // Style ID 3
+        [Color.white, Color(red: 1.0, green: 0.6196, blue: 0.902)]  // Style ID 4
+    ]
     
     init() {
         self.fetchNotes()
@@ -28,7 +35,7 @@ class NoteViewModel: ObservableObject {
         }
     }
     
-    func addNote(name: String, text: String) {
+    func addNote(name: String, text: String, style: Int16) {
         guard !name.isEmpty else {
                print("Title is empty")
                return
@@ -37,23 +44,22 @@ class NoteViewModel: ObservableObject {
         newTask.name = name
         newTask.text = text
         newTask.id = UUID()
-        newTask.style = Int16(0)
+        newTask.style = style
         saveData()
         print("Note added")
     }
     
-//    func updateTask(task: Task, newName: String) {
-//        if newName != "" {
-//            task.name = newName
-//            do {
-//                try container.viewContext.save()
-//                print("task updated")
-//            } catch let error {
-//                print("Error saving task: \(error)")
-//            }
-//            saveData()
-//        }
-//    }
+    func updateNote(_ note: Note, name: String, text: String, style: Int16) {
+           guard !name.isEmpty else {
+               print("Title is empty")
+               return
+           }
+           note.name = name
+           note.text = text
+           note.style = style
+           saveData()
+           print("Note updated")
+       }
     
     func deleteNote(at indices: IndexSet) {
             indices.forEach { index in
@@ -70,6 +76,10 @@ class NoteViewModel: ObservableObject {
             print("Error saving data \(error)")
         }
         fetchNotes()
+    }
+    
+    func gradientColorsForStyle(_ style: Int16) -> [Color] {
+            return gradientColors[Int(style)] // Default gradient colors
     }
     
 }
