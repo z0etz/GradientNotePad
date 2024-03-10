@@ -33,9 +33,10 @@ struct ContentView: View {
 struct MainView: View {
     
     @StateObject var viewModel = NoteViewModel()
-    var buttonColor = Color(.white)
+    var buttonColor = Color(red: 0.6196, green: 0.7647, blue: 1.0)
     
     var body: some View {
+        VStack {
         List {
             ForEach(viewModel.notes) { item in
                 NavigationLink(destination: EditView(viewModel: viewModel, note: item)) {
@@ -46,22 +47,23 @@ struct MainView: View {
                     LinearGradient(gradient: Gradient(colors: viewModel.gradientColorsForStyle(item.style)), startPoint: .topLeading, endPoint: .bottomTrailing)
                         .cornerRadius(10)
                         .foregroundColor(.white))
-                    }
-                        .onDelete(perform: { indexSet in
-                            viewModel.deleteNote(at: indexSet)
-                        })
-                    }
-                        .navigationBarBackButtonHidden(true)
-        .padding()
+            }
+            .onDelete(perform: { indexSet in
+                viewModel.deleteNote(at: indexSet)
+            })
+        }
+        
         Spacer()
         NavigationLink(destination: EditView(viewModel: viewModel)) {
             Text("Lägg till anteckning")
         }
         .padding()
         .background(buttonColor)
-        .foregroundColor(.black)
+        .foregroundColor(.white)
         .cornerRadius(20)
         .bold()
+        .navigationBarBackButtonHidden(true)
+    }
     }
 }
 
